@@ -39,7 +39,7 @@ app.post("/api/movies", (req,res) => {
 
 // GET /api/sales (NOTE: This route must accept the numeric query parameters "page" and "perPage", ie: /api/sales?page=1&perPage=5 )
 app.get("/api/movies", (req,res) => {
-    myData.getAllMovies(req.query.page, req.query.perPage)
+    myData.getAllMovies(req.query.page, req.query.perPage, req.query.title)
         .then((film) => {
             res.status(200).json(film);
         })
