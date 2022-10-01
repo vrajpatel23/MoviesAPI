@@ -45,7 +45,7 @@ app.post("/api/movies", (req,res) => {
 });
 
 app.get("/api/movies", (req,res) => {
-    db.getAllMovies(req.query.page, req.query.perPage)
+    db.getAllMovies(req.query.page, req.query.perPage, req.query.title)
         .then((film) => {res.status(201).json(film);
         })
         .catch((err) => {
